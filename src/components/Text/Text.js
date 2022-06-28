@@ -1,10 +1,12 @@
 import React from "react";
 import { TextStyled } from "./Text.styled";
 
-export const Text = ({text}) => {
+const Text = ({ text }) => {
   return (
     <div>
       <TextStyled>{text}</TextStyled>
     </div>
   );
 };
+
+export default Text;

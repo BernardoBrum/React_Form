@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import { ButtonStyled } from "./Button.styled";
 
-const Button = () => {
+const Button = ({ text }) => {
   return (
-    <div>Button</div>
-  )
-}
+    <div>
+      <ButtonStyled>{text}</ButtonStyled>
+    </div>
+  );
+};
 
-export default Button
+export default Button;

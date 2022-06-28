@@ -8,18 +8,28 @@ const FormStyled = styled.section`
   background-color: white;
   width: 60vw;
   height: 80vh;
-  
+
   img {
-    margin-top: 20%;
+    margin-top: 15%;
   }
 
   .container1 {
     width: 80%;
+    margin-top: 3%;
   }
 
   .container2 {
     display: flex;
     width: 80%;
+    margin-top: 3%;
+  }
+
+  .container3 {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-top: 10%;
+    margin-right: 1%;
   }
 
   .sub-container1 {
@@ -31,7 +41,7 @@ const FormStyled = styled.section`
   .sub-container2 {
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 28%;
   }
 
   @media (max-width: 768px) {

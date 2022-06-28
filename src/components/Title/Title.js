@@ -1,11 +1,12 @@
-import React from 'react'
-import { TitleStyled } from './Title.styled'
+import React from "react";
+import { TitleStyled } from "./Title.styled";
 
-export const Title = ({text}) => {
+const Title = ({ text }) => {
   return (
     <div>
-        <TitleStyled>{text}</TitleStyled>
+      <TitleStyled>{text}</TitleStyled>
     </div>
-  )
-}
+  );
+};
 
+export default Title;

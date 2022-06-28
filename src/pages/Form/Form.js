@@ -1,9 +1,11 @@
-import { Text } from "../../components/Text/Text";
-import { Input } from "../../components/Input/Input";
-import { Title } from "../../components/Title/Title";
-import { FormStyled } from "./Form.styled";
-import Main from "../../assets/main.png";
 import React from "react";
+import { FormStyled } from "./Form.styled";
+import Text from "../../components/Text/Text";
+import Input from "../../components/Input/Input";
+import Title from "../../components/Title/Title";
+import Checkbox from "../../components/Checkbox/Checkbox";
+import Button from "../../components/Button/Button";
+import Main from "../../assets/main.png";
 
 const Form = () => {
   return (
@@ -14,7 +16,7 @@ const Form = () => {
       <Title text="Intern Sign Up" />
       <div class="container1">
         <Text text="Full Name *" />
-        <Input width="100%" type="text" />
+        <Input width="98%" type="text" />
       </div>
       <div class="container2">
         <div class="sub-container1">
@@ -35,6 +37,10 @@ const Form = () => {
           <Text text="Birthday *" />
           <Input width="100%" type="date" />
         </div>
+      </div>
+      <div class="container3">
+        <Checkbox type="checkbox" text="I accept the terms and privacy" />
+        <Button text="Register" />
       </div>
     </FormStyled>
   );
