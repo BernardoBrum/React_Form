@@ -16,16 +16,16 @@ const Form = () => {
       <Title text="Intern Sign Up" />
       <div class="container1">
         <Text text="Full Name *" />
-        <Input width="98%" type="text" />
+        <Input placeholder="Name" width="98%" type="text" />
       </div>
       <div class="container2">
         <div class="sub-container1">
           <Text text="Email *" />
-          <Input width="90%" type="email" />
+          <Input placeholder="foo@bar.com" width="90%" type="email" />
         </div>
         <div class="sub-container2">
           <Text text="Phone" />
-          <Input width="100%" type="tel" />
+          <Input placeholder="(83) 00000-0000" width="100%" type="tel" />
         </div>
       </div>
       <div class="container2">
