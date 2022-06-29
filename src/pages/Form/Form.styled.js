@@ -15,13 +15,13 @@ const FormStyled = styled.section`
 
   .container1 {
     width: 80%;
-    margin-top: 3%;
+    margin-top: 2%;
   }
 
   .container2 {
     display: flex;
     width: 80%;
-    margin-top: 3%;
+    margin-top: 2%;
   }
 
   .container3 {
