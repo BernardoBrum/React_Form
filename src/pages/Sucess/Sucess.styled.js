@@ -8,18 +8,28 @@ const SucessStyled = styled.section`
   width: 60vw;
   height: 80vh;
 
+  @media (max-width: 768px) {
+    height: 100vh;
+    width: 100vw;
+  }
+
   .container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 70%;
+
+    @media (max-width: 768px) {
+      height: 35%;
+      margin-top: 40%;
+    }
   }
 
   .sub-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 10%;
+    margin-bottom: 15%;
   }
 
   img {
@@ -31,6 +41,10 @@ const SucessStyled = styled.section`
     width: 270px;
     font-weight: 400;
     font-size: 36px;
+
+    @media (max-width: 768px) {
+      height: 80px;
+    }
   }
 `;
 

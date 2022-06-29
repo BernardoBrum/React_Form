@@ -25,23 +25,21 @@ const Form = ({ display }) => {
           <Text text="Email *" />
           <Input placeholder="foo@bar.com" width="90%" type="email" />
           <Error visibility="hidden" text="Email Invalid" />
-        </div>
-        <div class="sub-container2">
-          <Text text="Phone" />
-          <Input placeholder="(83) 00000-0000" width="100%" type="tel" />
-          <Error visibility="hidden" text="Phone Invalid" />
-        </div>
-      </div>
-      <div class="container2">
-        <div class="sub-container1">
           <Text text="Password *" />
           <Input width="90%" type="password" />
           <Error visibility="hidden" text="Password Invalid" />
         </div>
         <div class="sub-container2">
-          <Text text="Birthday *" />
-          <Input width="100%" type="date" />
-          <Error visibility="hidden" text="Age Invalid" />
+          <div class="container-media">
+            <Text text="Phone" />
+            <Input placeholder="(83) 00000-0000" width="100%" type="tel" />
+            <Error visibility="hidden" text="Phone Invalid" />
+          </div>
+          <div class="container-media">
+            <Text text="Birthday *" />
+            <Input width="100%" type="date" />
+            <Error visibility="hidden" text="Age Invalid" />
+          </div>
         </div>
       </div>
       <div class="container3">

@@ -9,6 +9,11 @@ const FormStyled = styled.section`
   width: 60vw;
   height: 80vh;
 
+  @media (max-width: 768px) {
+      width: 100vw;
+      height: 100vh;
+    }
+
   img {
     margin-top: 15%;
   }
@@ -22,12 +27,24 @@ const FormStyled = styled.section`
   .container1 {
     width: 80%;
     margin-top: 1%;
+
+    @media (max-width: 768px) {
+      input {
+        width: 92%;
+      }
+    }
   }
 
   .container2 {
     display: flex;
     width: 80%;
     margin-top: 1%;
+
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+
+    }
   }
 
   .container3 {
@@ -36,23 +53,46 @@ const FormStyled = styled.section`
     width: 80%;
     margin-top: 8%;
     margin-right: 1%;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+
+      button {
+        width: 100%;
+        height: 80px;
+      }
+    }
   }
 
   .sub-container1 {
     display: flex;
     flex-direction: column;
     width: 70%;
+
+    @media (max-width: 768px) {
+      width: 100%;
+
+      input {
+        width: 92%;
+      }
+    }
   }
 
   .sub-container2 {
     display: flex;
     flex-direction: column;
     width: 28%;
+
+    @media (max-width: 768px) {
+      flex-direction: row;
+      width: 92%;
+      justify-content: space-between;
+    }
   }
 
-  @media (max-width: 768px) {
-    img {
-      height: 15vh;
+  .container-media {
+    @media (max-width: 768px) {
+      width: 45%;
     }
   }
 `;
