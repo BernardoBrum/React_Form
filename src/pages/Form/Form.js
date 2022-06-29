@@ -1,16 +1,16 @@
 import React from "react";
 import { FormStyled } from "./Form.styled";
+import Main from "../../assets/main.png";
 import Text from "../../components/Text/Text";
 import Input from "../../components/Input/Input";
 import Title from "../../components/Title/Title";
 import Checkbox from "../../components/Checkbox/Checkbox";
 import Button from "../../components/Button/Button";
 import Error from "../../components/Error/Error";
-import Main from "../../assets/main.png";
 
-const Form = () => {
+const Form = ({ display }) => {
   return (
-    <FormStyled>
+    <FormStyled display="flex">
       <div>
         <img src={Main} alt="" />
       </div>
@@ -49,7 +49,7 @@ const Form = () => {
           <Checkbox type="checkbox" text="I accept the terms and privacy" />
           <Error visibility="hidden" text="You must accept the terms" />
         </div>
-        <Button text="Register" />
+        <Button width="90px" height="40px" id="form-button" text="Register" />
       </div>
     </FormStyled>
   );

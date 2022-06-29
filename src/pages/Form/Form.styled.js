@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const FormStyled = styled.section`
-  display: flex;
+  display: ${(props) => props.display};
   flex-direction: column;
   align-items: center;
   border-radius: 20px;
@@ -13,22 +13,28 @@ const FormStyled = styled.section`
     margin-top: 15%;
   }
 
+  button {
+    width: 90px;
+    height: 40px;
+    font-size: 16px;
+  }
+
   .container1 {
     width: 80%;
-    margin-top: 2%;
+    margin-top: 1%;
   }
 
   .container2 {
     display: flex;
     width: 80%;
-    margin-top: 2%;
+    margin-top: 1%;
   }
 
   .container3 {
     display: flex;
     justify-content: space-between;
     width: 80%;
-    margin-top: 10%;
+    margin-top: 8%;
     margin-right: 1%;
   }
 
