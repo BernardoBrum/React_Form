@@ -6,7 +6,7 @@ import Button from "../../components/Button/Button";
 
 const Sucess = ({ display }) => {
   return (
-    <SucessStyled display="none">
+    <SucessStyled display="flex">
       <div class="container">
         <div class="sub-container">
           <img src={Main} alt="" />
