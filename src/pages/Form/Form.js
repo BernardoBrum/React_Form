@@ -7,47 +7,159 @@ import Title from "../../components/Title/Title";
 import Checkbox from "../../components/Checkbox/Checkbox";
 import Button from "../../components/Button/Button";
 import Error from "../../components/Error/Error";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
-const Form = ({ display }) => {
+const Form = () => {
+  const [nameError, setNameError] = useState("hidden");
+  const [emailError, setEmailError] = useState("hidden");
+  const [passwordError, setPasswordError] = useState("hidden");
+  const [phoneError, setPhoneError] = useState("hidden");
+  const [ageError, setAgeError] = useState("hidden");
+  const [checkError, setCheckError] = useState("hidden");
+
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const [phone, setPhone] = useState();
+  const [age, setAge] = useState();
+  const [check, setCheck] = useState();
+
+  const push = useNavigate();
+
+  const date = new Date();
+  const year = date.getFullYear();
+
+  const validate = () => {
+    if (name) {
+      if (
+        name.includes(" ") &&
+        name.length > 4 &&
+        /^[a-z0-9]+@[a-z0-9]+\.[a-z0-9]+$/.test(email) &&
+        /^[0-9]{6,8}$/.test(password) &&
+        /^[0-9]{11}$/.test(phone) &&
+        parseInt(age.slice(0, 4)) > year - 121 &&
+        check === true
+      ) {
+        push("/success");
+      } else {
+        if (name.includes(" ") && name.length > 4) {
+          setNameError("hidden");
+        } else {
+          setNameError("visible");
+        }
+        if (/^[a-z0-9]+@[a-z0-9]+\.[a-z0-9]+$/.test(email)) {
+          setEmailError("hidden");
+        } else {
+          setEmailError("visible");
+        }
+        if (/^[0-9]{6,8}$/.test(password)) {
+          setPasswordError("hidden");
+        } else {
+          setPasswordError("visible");
+        }
+        if (/^[0-9]{11}$/.test(phone)) {
+          setPhoneError("hidden");
+        } else {
+          setPhoneError("visible");
+        }
+        if (age) {
+          if (parseInt(age.slice(0, 4)) > year - 121) {
+            setAgeError("hidden");
+          } else {
+            setAgeError("visible");
+          }
+        } else {
+          setAgeError("visible");
+        }
+        if (!check === true) {
+          setCheckError("visible");
+        } else {
+          setCheckError("hidden");
+        }
+      }
+    } else {
+      setNameError("visible");
+      setEmailError("visible");
+      setPasswordError("visible");
+      setPhoneError("visible");
+      setAgeError("visible");
+      setCheckError("visible");
+    }
+  };
+
   return (
     <FormStyled display="flex">
       <div>
         <img src={Main} alt="" />
       </div>
       <Title text="Intern Sign Up" />
-      <div class="container1">
+      <div className="container1">
         <Text text="Full Name *" />
-        <Input placeholder="Name" width="98%" type="text" />
-        <Error visibility="hidden" text="Fullname Invalid" />
+        <Input
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Name"
+          width="98%"
+          type="text"
+        />
+        <Error visibility={nameError} text="Fullname Invalid" />
       </div>
-      <div class="container2">
-        <div class="sub-container1">
+      <div className="container2">
+        <div className="sub-container1">
           <Text text="Email *" />
-          <Input placeholder="foo@bar.com" width="90%" type="email" />
-          <Error visibility="hidden" text="Email Invalid" />
+          <Input
+            onChange={(e) => setEmail(e.target.value)}
+            id="email"
+            placeholder="foo@bar.com"
+            width="90%"
+            type="email"
+          />
+          <Error visibility={emailError} text="Email Invalid" />
           <Text text="Password *" />
-          <Input width="90%" type="password" />
-          <Error visibility="hidden" text="Password Invalid" />
+          <Input
+            onChange={(e) => setPassword(e.target.value)}
+            id="password"
+            width="90%"
+            type="password"
+          />
+          <Error visibility={passwordError} text="Password Invalid" />
         </div>
-        <div class="sub-container2">
-          <div class="container-media">
+        <div className="sub-container2">
+          <div className="container-media">
             <Text text="Phone" />
-            <Input placeholder="(83) 00000-0000" width="100%" type="tel" />
-            <Error visibility="hidden" text="Phone Invalid" />
+            <Input
+              onChange={(e) => setPhone(e.target.value)}
+              id="phone"
+              placeholder="(83) 00000-0000"
+              width="100%"
+              type="tel"
+            />
+            <Error visibility={phoneError} text="Phone Invalid" />
           </div>
-          <div class="container-media">
+          <div className="container-media">
             <Text text="Birthday *" />
-            <Input width="100%" type="date" />
-            <Error visibility="hidden" text="Age Invalid" />
+            <Input
+              required="true"
+              onChange={(e) => setAge(e.target.value)}
+              id="age"
+              width="100%"
+              type="date"
+            />
+            <Error visibility={ageError} text="Age Invalid" />
           </div>
         </div>
       </div>
-      <div class="container3">
+      <div className="container3">
         <div>
-          <Checkbox type="checkbox" text="I accept the terms and privacy" />
-          <Error visibility="hidden" text="You must accept the terms" />
+          <Checkbox
+            onChange={(e) => setCheck(e.target.checked)}
+            id="check"
+            type="checkbox"
+            text="I accept the terms and privacy"
+          />
+          <Error visibility={checkError} text="You must accept the terms" />
         </div>
-        <Button width="90px" height="40px" id="form-button" text="Register" />
+        <Button onClick={validate} width="90px" height="40px" text="Register" />
       </div>
     </FormStyled>
   );

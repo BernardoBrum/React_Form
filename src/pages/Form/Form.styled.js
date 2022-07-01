@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const FormStyled = styled.section`
-  display: ${(props) => props.display};
+  display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 20px;
@@ -10,9 +10,9 @@ const FormStyled = styled.section`
   height: 80vh;
 
   @media (max-width: 768px) {
-      width: 100vw;
-      height: 100vh;
-    }
+    width: 100vw;
+    height: 100vh;
+  }
 
   img {
     margin-top: 15%;
@@ -43,7 +43,6 @@ const FormStyled = styled.section`
     @media (max-width: 768px) {
       display: flex;
       flex-direction: column;
-
     }
   }
 

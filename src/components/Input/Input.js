@@ -1,10 +1,16 @@
 import React from "react";
 import { InputStyled } from "./Input.styled";
 
-const Input = ({width, type, placeholder}) => {
+const Input = ({ width, type, placeholder, onChange }) => {
   return (
     <div>
-      <InputStyled autoComplete="none" width={width} type={type} placeholder={placeholder} />
+      <InputStyled
+        onChange={onChange}
+        autoComplete="none"
+        width={width}
+        type={type}
+        placeholder={placeholder}
+      />
     </div>
   );
 };

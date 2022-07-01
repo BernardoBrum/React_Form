@@ -1,6 +1,6 @@
 import styled from "styled-components";
-const SucessStyled = styled.section`
-  display: ${(props) => props.display};
+const SuccessStyled = styled.section`
+  display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 20px;
@@ -29,7 +29,7 @@ const SucessStyled = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 15%;
+    margin-bottom: 20%;
   }
 
   img {
@@ -48,4 +48,4 @@ const SucessStyled = styled.section`
   }
 `;
 
-export { SucessStyled };
+export { SuccessStyled };
