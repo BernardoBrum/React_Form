@@ -31,60 +31,51 @@ const Form = () => {
   const year = date.getFullYear();
 
   const validate = () => {
-    if (name) {
-      if (
-        name.includes(" ") &&
-        name.length > 4 &&
-        /^[a-z0-9]+@[a-z0-9]+\.[a-z0-9]+$/.test(email) &&
-        /^[0-9]{6,8}$/.test(password) &&
-        /^[0-9]{11}$/.test(phone) &&
-        parseInt(age.slice(0, 4)) > year - 121 &&
-        check === true
-      ) {
-        push("/success");
+    if (
+      name.includes(" ") &&
+      name.length > 4 &&
+      /^[a-z0-9]+@[a-z0-9]+\.[a-z0-9]+$/.test(email) &&
+      /^[0-9]{6,8}$/.test(password) &&
+      /^[0-9]{11}$/.test(phone) &&
+      parseInt(age.slice(0, 4)) > year - 121 &&
+      check === true
+    ) {
+      push("/success");
+    } else {
+      if (name.includes(" ") && name.length > 4) {
+        setNameError("hidden");
       } else {
-        if (name.includes(" ") && name.length > 4) {
-          setNameError("hidden");
-        } else {
-          setNameError("visible");
-        }
-        if (/^[a-z0-9]+@[a-z0-9]+\.[a-z0-9]+$/.test(email)) {
-          setEmailError("hidden");
-        } else {
-          setEmailError("visible");
-        }
-        if (/^[0-9]{6,8}$/.test(password)) {
-          setPasswordError("hidden");
-        } else {
-          setPasswordError("visible");
-        }
-        if (/^[0-9]{11}$/.test(phone)) {
-          setPhoneError("hidden");
-        } else {
-          setPhoneError("visible");
-        }
-        if (age) {
-          if (parseInt(age.slice(0, 4)) > year - 121) {
-            setAgeError("hidden");
-          } else {
-            setAgeError("visible");
-          }
+        setNameError("visible");
+      }
+      if (/^[a-z0-9]+@[a-z0-9]+\.[a-z0-9]+$/.test(email)) {
+        setEmailError("hidden");
+      } else {
+        setEmailError("visible");
+      }
+      if (/^[0-9]{6,8}$/.test(password)) {
+        setPasswordError("hidden");
+      } else {
+        setPasswordError("visible");
+      }
+      if (/^[0-9]{11}$/.test(phone)) {
+        setPhoneError("hidden");
+      } else {
+        setPhoneError("visible");
+      }
+      if (age) {
+        if (parseInt(age.slice(0, 4)) > year - 121) {
+          setAgeError("hidden");
         } else {
           setAgeError("visible");
         }
-        if (!check === true) {
-          setCheckError("visible");
-        } else {
-          setCheckError("hidden");
-        }
+      } else {
+        setAgeError("visible");
       }
-    } else {
-      setNameError("visible");
-      setEmailError("visible");
-      setPasswordError("visible");
-      setPhoneError("visible");
-      setAgeError("visible");
-      setCheckError("visible");
+      if (check === true) {
+        setCheckError("hidden");
+      } else {
+        setCheckError("visible");
+      }
     }
   };
 
