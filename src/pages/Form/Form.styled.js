@@ -6,7 +6,7 @@ const FormStyled = styled.section`
   align-items: center;
   border-radius: 20px;
   background-color: white;
-  width: 60vw;
+  width: 50vw;
   height: 80vh;
 
   @media (max-width: 768px) {
@@ -27,18 +27,13 @@ const FormStyled = styled.section`
   .container1 {
     width: 80%;
     margin-top: 1%;
-
-    @media (max-width: 768px) {
-      input {
-        width: 92%;
-      }
-    }
   }
 
   .container2 {
     display: flex;
     width: 80%;
     margin-top: 1%;
+    justify-content: space-between;
 
     @media (max-width: 768px) {
       display: flex;
@@ -70,10 +65,6 @@ const FormStyled = styled.section`
 
     @media (max-width: 768px) {
       width: 100%;
-
-      input {
-        width: 92%;
-      }
     }
   }
 
@@ -84,8 +75,8 @@ const FormStyled = styled.section`
 
     @media (max-width: 768px) {
       flex-direction: row;
-      width: 92%;
       justify-content: space-between;
+      width: 100%;
     }
   }
 

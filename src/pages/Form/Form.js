@@ -31,50 +31,59 @@ const Form = () => {
   const year = date.getFullYear();
 
   const validate = () => {
-    if (
-      name.includes(" ") &&
-      name.length > 4 &&
-      /^[a-z0-9]+@[a-z0-9]+\.[a-z0-9]+$/.test(email) &&
-      /^[0-9]{6,8}$/.test(password) &&
-      /^[0-9]{11}$/.test(phone) &&
-      parseInt(age.slice(0, 4)) > year - 121 &&
-      check === true
-    ) {
-      push("/success");
+    if (!name && !email && !password && !phone && !age && !check === true) {
+      setNameError("visible");
+      setEmailError("visible");
+      setPasswordError("visible");
+      setPhoneError("visible");
+      setAgeError("visible");
+      setCheckError("visible");
     } else {
-      if (name.includes(" ") && name.length > 4) {
-        setNameError("hidden");
+      if (
+        name.includes(" ") &&
+        name.length > 4 &&
+        /^[a-z0-9]+@[a-z0-9]+\.[a-z0-9]+$/.test(email) &&
+        /^[0-9]{6,8}$/.test(password) &&
+        /^[0-9]{11}$/.test(phone) &&
+        parseInt(age.slice(0, 4)) > year - 121 &&
+        check === true
+      ) {
+        push("/success");
       } else {
-        setNameError("visible");
-      }
-      if (/^[a-z0-9]+@[a-z0-9]+\.[a-z0-9]+$/.test(email)) {
-        setEmailError("hidden");
-      } else {
-        setEmailError("visible");
-      }
-      if (/^[0-9]{6,8}$/.test(password)) {
-        setPasswordError("hidden");
-      } else {
-        setPasswordError("visible");
-      }
-      if (/^[0-9]{11}$/.test(phone)) {
-        setPhoneError("hidden");
-      } else {
-        setPhoneError("visible");
-      }
-      if (age) {
-        if (parseInt(age.slice(0, 4)) > year - 121) {
-          setAgeError("hidden");
+        if (name.includes(" ") && name.length > 4) {
+          setNameError("hidden");
+        } else {
+          setNameError("visible");
+        }
+        if (/^[a-z0-9]+@[a-z0-9]+\.[a-z0-9]+$/.test(email)) {
+          setEmailError("hidden");
+        } else {
+          setEmailError("visible");
+        }
+        if (/^[0-9]{6,8}$/.test(password)) {
+          setPasswordError("hidden");
+        } else {
+          setPasswordError("visible");
+        }
+        if (/^[0-9]{11}$/.test(phone)) {
+          setPhoneError("hidden");
+        } else {
+          setPhoneError("visible");
+        }
+        if (age) {
+          if (parseInt(age.slice(0, 4)) > year - 121) {
+            setAgeError("hidden");
+          } else {
+            setAgeError("visible");
+          }
         } else {
           setAgeError("visible");
         }
-      } else {
-        setAgeError("visible");
-      }
-      if (check === true) {
-        setCheckError("hidden");
-      } else {
-        setCheckError("visible");
+        if (check === true) {
+          setCheckError("hidden");
+        } else {
+          setCheckError("visible");
+        }
       }
     }
   };
@@ -90,7 +99,6 @@ const Form = () => {
         <Input
           onChange={(e) => setName(e.target.value)}
           placeholder="Name"
-          width="98%"
           type="text"
         />
         <Error visibility={nameError} text="Fullname Invalid" />
@@ -100,17 +108,13 @@ const Form = () => {
           <Text text="Email *" />
           <Input
             onChange={(e) => setEmail(e.target.value)}
-            id="email"
             placeholder="foo@bar.com"
-            width="90%"
             type="email"
           />
           <Error visibility={emailError} text="Email Invalid" />
           <Text text="Password *" />
           <Input
             onChange={(e) => setPassword(e.target.value)}
-            id="password"
-            width="90%"
             type="password"
           />
           <Error visibility={passwordError} text="Password Invalid" />
@@ -120,9 +124,7 @@ const Form = () => {
             <Text text="Phone" />
             <Input
               onChange={(e) => setPhone(e.target.value)}
-              id="phone"
               placeholder="(83) 00000-0000"
-              width="100%"
               type="tel"
             />
             <Error visibility={phoneError} text="Phone Invalid" />
@@ -132,8 +134,6 @@ const Form = () => {
             <Input
               required="true"
               onChange={(e) => setAge(e.target.value)}
-              id="age"
-              width="100%"
               type="date"
             />
             <Error visibility={ageError} text="Age Invalid" />
@@ -144,7 +144,6 @@ const Form = () => {
         <div>
           <Checkbox
             onChange={(e) => setCheck(e.target.checked)}
-            id="check"
             type="checkbox"
             text="I accept the terms and privacy"
           />
