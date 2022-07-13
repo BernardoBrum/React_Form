@@ -7,6 +7,8 @@ const ButtonStyled = styled.button`
   cursor: pointer;
   border-radius: 10px;
   transition: 0.2s;
+  width: 90px;
+  height: 40px;
 
   &:hover {
     background-color: #0ca8a8;

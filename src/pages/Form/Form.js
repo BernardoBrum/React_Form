@@ -149,7 +149,7 @@ const Form = () => {
           />
           <Error visibility={checkError} text="You must accept the terms" />
         </div>
-        <Button onClick={validate} width="90px" height="40px" text="Register" />
+        <Button onClick={validate} text="Register" />
       </div>
     </FormStyled>
   );

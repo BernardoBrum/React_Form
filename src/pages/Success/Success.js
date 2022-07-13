@@ -14,7 +14,7 @@ const Success = () => {
           <Title text="Success!" />
         </div>
         <Link to="/">
-          <Button width="220px" height="150px" text="Go Back!" />
+          <Button text="Go Back!" />
         </Link>
       </div>
     </SuccessStyled>
